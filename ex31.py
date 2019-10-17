@@ -1,3 +1,5 @@
+import random
+
 print("""You enter a dark room with two doors.
 Do you go through door #1 or door #2?""")
 
@@ -5,18 +7,23 @@ door = input("> ")
 
 if door == "1":
     print("There's a giant bear here eating a cheese cake.")
-    print("What do you do?")
-    print("1. Take the cake.")
-    print("2. Scream at the bear.")
+    print("Roll for initiative.")
 
-    bear = input("> ")
+    input("> Press ENTER to roll.")
 
-    if bear == "1":
-        print("The bear eats your face off.  Good job!")
-    elif bear == "2":
-        print("The bear eats your legs off.  Good job!")
+    bear = random.randint(1, 20)
+    
+    if bear == 1:
+        print(f"CRITICAL FAILURE! You rolled a {bear}!  ")
+        print("The bear eats your face off.  You are dead.  Good job!")
+    elif bear in range (2, 10):
+        print(f"You rolled a {bear}!")
+        print("The bear eats your legs off.  You are dead.  Good job!")
+    elif bear in range (11, 19):
+        print(f"You rolled a {bear}!")
+        print("The bear swipes at you but you're able to dodge it and run out the door.  Good job!")
     else:
-        print(f"Well, doing {bear} is probably better.")
+        print(f"CRITICAL HIT!  You rolled a {bear}!")
         print("Bear runs away.")
 
 elif door == "2":
