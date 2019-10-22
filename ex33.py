@@ -3,7 +3,6 @@ def counter(i, x, y, n):
         print(f"At the top i is {i}")
         n.append(i)
 
-        i += y
         print("Numbers now: ", n)
 
 start = input("Where to start? \n    > ")
