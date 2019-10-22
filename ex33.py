@@ -1,5 +1,5 @@
 def counter(i, x, y, n):
-    while i < x:
+    for i in range (i, x, y):
         print(f"At the top i is {i}")
         n.append(i)
 
